@@ -91,5 +91,30 @@ app.get("/terms", (req, res) => {
   `);
 });
 
+// ✅ User Data Deletion Route
+app.get("/delete-data", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Suppression des données</title>
+        <meta charset="utf-8" />
+        <style>
+          body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+          h1 { color: #c0392b; }
+          p { margin-bottom: 15px; }
+        </style>
+      </head>
+      <body>
+        <h1>Suppression des données utilisateur</h1>
+        <p>Conformément aux exigences de Facebook, vous pouvez demander la suppression 
+        de vos données associées à l’application <strong>MessengerBotIA</strong>.</p>
+        <p>Pour supprimer vos données, veuillez contacter l’administrateur de la Page via Messenger 
+        ou envoyer un email à <strong>ton-email@example.com</strong>.</p>
+        <p>Nous traiterons la demande et confirmerons la suppression dans un délai de 7 jours.</p>
+      </body>
+    </html>
+  `);
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
