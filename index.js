@@ -64,5 +64,32 @@ app.get("/privacy", (req, res) => {
   `);
 });
 
+// ✅ Terms of Service Route
+app.get("/terms", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Terms of Service</title>
+        <meta charset="utf-8" />
+        <style>
+          body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+          h1 { color: #2c3e50; }
+          p { margin-bottom: 15px; }
+        </style>
+      </head>
+      <body>
+        <h1>Conditions Générales d’Utilisation</h1>
+        <p>En utilisant cette application <strong>MessengerBotIA</strong>, vous acceptez que vos messages 
+        soient traités automatiquement afin de générer des réponses.</p>
+        <p>Vous vous engagez à ne pas utiliser cette application pour envoyer du contenu illégal, offensant 
+        ou nuisible.</p>
+        <p>Nous ne sommes pas responsables des dommages directs ou indirects liés à l’utilisation de ce service.</p>
+        <p>Ces conditions peuvent être mises à jour à tout moment. Les utilisateurs seront invités à consulter 
+        régulièrement cette page.</p>
+      </body>
+    </html>
+  `);
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
